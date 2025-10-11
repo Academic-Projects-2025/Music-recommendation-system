@@ -1,6 +1,6 @@
 this is the project structure for now
 
-music-recommender/
+```music-recommender/
 ├── data/
 │ ├── raw/ <- Original FMA audio + Spotify CSV
 │ ├── interim/ <- Extracted librosa features
@@ -35,6 +35,7 @@ music-recommender/
 ├── pyproject.toml
 ├── README.md
 └── .gitignore
+```
 
 ```bash
 uv init
