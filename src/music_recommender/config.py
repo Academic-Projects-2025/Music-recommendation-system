@@ -18,6 +18,9 @@ class PathConfig(BaseSettings):
     fma_small: Path = Field(
         default_factory=lambda: PROJECT_ROOT / "data" / "raw" / "fma_small"
     )
+    fma_large: Path = Field(
+        default_factory=lambda: PROJECT_ROOT / "data" / "raw" / "fma_large"
+    )
     spotify: Path = Field(
         default_factory=lambda: PROJECT_ROOT / "data" / "raw" / "spotify-12m-songs"
     )
