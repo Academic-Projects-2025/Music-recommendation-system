@@ -1,0 +1,92 @@
+{
+  "model_info": {
+    "type": "Random Forest Regression",
+    "library": "scikit-learn",
+    "date_trained": "2025-10-27 21:51:02.928927"
+  },
+  "hyperparameters": {
+    "pca_variance_threshold": 0.9,
+    "pca_components": 45,
+    "n_estimators": 200,
+    "max_depth": null,
+    "min_samples_split": 5,
+    "min_samples_leaf": 2,
+    "max_features": "0.3",
+    "bootstrap": false
+  },
+  "feature_extraction": {
+    "original_features": 246,
+    "pca_reduced_features": 45
+  },
+  "performance": {
+    "train_r2": 0.7040685871107243,
+    "cv_r2": 0.17411799175756343,
+    "test_r2": 0.18758936661467643,
+    "test_mae": 2.8641633799938138,
+    "train_test_gap": 0.5164792204960479,
+    "cv_std": 0.015312706732568664,
+    "per_target": {
+      "danceability": {
+        "r2": 0.194889975600138,
+        "mae": 0.1258131431610698,
+        "quality": "moderate"
+      },
+      "energy": {
+        "r2": 0.46192307013832046,
+        "mae": 0.165364762287297,
+        "quality": "strong"
+      },
+      "key": {
+        "r2": 0.03871962740554036,
+        "mae": 3.2341202461234975,
+        "quality": "weak"
+      },
+      "loudness": {
+        "r2": 0.34280624942762106,
+        "mae": 2.8556403390907428,
+        "quality": "strong"
+      },
+      "mode": {
+        "r2": 0.03411688120234646,
+        "mae": 0.41120091292779154,
+        "quality": "weak"
+      },
+      "speechiness": {
+        "r2": 0.13716967285528658,
+        "mae": 0.03284798677745664,
+        "quality": "weak"
+      },
+      "acousticness": {
+        "r2": 0.3898987759818162,
+        "mae": 0.23976708625482612,
+        "quality": "strong"
+      },
+      "instrumentalness": {
+        "r2": 0.1742085492381833,
+        "mae": 0.3018895122269299,
+        "quality": "moderate"
+      },
+      "liveness": {
+        "r2": 0.04944862724343424,
+        "mae": 0.11165266002958989,
+        "quality": "weak"
+      },
+      "valence": {
+        "r2": 0.1818759706494123,
+        "mae": 0.1938635229958024,
+        "quality": "moderate"
+      },
+      "tempo": {
+        "r2": 0.058425633019343115,
+        "mae": 23.833637008056936,
+        "quality": "weak"
+      }
+    }
+  },
+  "comparison_with_ridge": {
+    "ridge_r2": 0.2548,
+    "rf_r2": 0.18758936661467643,
+    "difference": -0.0672106333853236,
+    "winner": "Ridge"
+  }
+}

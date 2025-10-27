@@ -12,6 +12,7 @@ class PathConfig(BaseSettings):
     data: Path = Field(default_factory=lambda: PROJECT_ROOT / "data")
     models: Path = Field(default_factory=lambda: PROJECT_ROOT / "models")
     logs: Path = Field(default_factory=lambda: PROJECT_ROOT / "logs")
+    reports: Path = Field(default_factory=lambda: PROJECT_ROOT / "reports")
     fma_metadata: Path = Field(
         default_factory=lambda: PROJECT_ROOT / "data" / "raw" / "fma_metadata"
     )
