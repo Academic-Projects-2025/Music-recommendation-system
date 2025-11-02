@@ -25,10 +25,12 @@ class PathConfig(BaseSettings):
     spotify: Path = Field(
         default_factory=lambda: PROJECT_ROOT / "data" / "raw" / "spotify-12m-songs"
     )
-    audio_spotify :Path = Field(default_factory=lambda:PROJECT_ROOT/"data"/"processed"/"audio")
-    processed :Path = Field(default_factory=lambda:PROJECT_ROOT/"data"/"processed")
-    interim :Path = Field(default_factory=lambda:PROJECT_ROOT/"data"/"interim")
-    
+    audio_spotify: Path = Field(
+        default_factory=lambda: PROJECT_ROOT / "data" / "processed" / "audio"
+    )
+    processed: Path = Field(default_factory=lambda: PROJECT_ROOT / "data" / "processed")
+    interim: Path = Field(default_factory=lambda: PROJECT_ROOT / "data" / "interim")
+    logs: Path = Field(default_factory=lambda: PROJECT_ROOT / "logs")
 
     def model_post_init(self, __context):
         self.models.mkdir(exist_ok=True, parents=True)
