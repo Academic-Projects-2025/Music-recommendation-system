@@ -12,6 +12,7 @@ class PathConfig(BaseSettings):
     data: Path = Field(default_factory=lambda: PROJECT_ROOT / "data")
     models: Path = Field(default_factory=lambda: PROJECT_ROOT / "models")
     logs: Path = Field(default_factory=lambda: PROJECT_ROOT / "logs")
+    reports: Path = Field(default_factory=lambda: PROJECT_ROOT / "reports")
     fma_metadata: Path = Field(
         default_factory=lambda: PROJECT_ROOT / "data" / "raw" / "fma_metadata"
     )
@@ -24,6 +25,10 @@ class PathConfig(BaseSettings):
     spotify: Path = Field(
         default_factory=lambda: PROJECT_ROOT / "data" / "raw" / "spotify-12m-songs"
     )
+    audio_spotify :Path = Field(default_factory=lambda:PROJECT_ROOT/"data"/"processed"/"audio")
+    processed :Path = Field(default_factory=lambda:PROJECT_ROOT/"data"/"processed")
+    interim :Path = Field(default_factory=lambda:PROJECT_ROOT/"data"/"interim")
+    
 
     def model_post_init(self, __context):
         self.models.mkdir(exist_ok=True, parents=True)
