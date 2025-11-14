@@ -2,7 +2,7 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.linear_model import ElasticNet, Lasso, Ridge
 from sklearn.svm import SVC, SVR
 from skopt.space import Categorical, Integer, Real
-
+from xgboost import XGBClassifier, XGBRegressor
 
 MODEL_CLASS_LOOKUP = {
     "regression": {
@@ -10,10 +10,12 @@ MODEL_CLASS_LOOKUP = {
         "Lasso": Lasso,
         "ElasticNet": ElasticNet,
         "Random Forest": RandomForestRegressor,
+        "XGBoost": XGBRegressor,
         "SVM": SVR,
     },
     "classification": {
         "Random Forest": RandomForestClassifier,
+        "XGBoost": XGBClassifier,
         "SVM": SVC,
     },
 }
@@ -64,6 +66,18 @@ MODEL_TEST = {
                 "estimator__random_state": Categorical([42]),
             },
         },
+        "XGBoost": {
+            "base_model": XGBRegressor(),
+            "param_grid": {
+                "estimator__n_estimators": Integer(200, 700),
+                "estimator__max_depth": Integer(8, 15),
+                "estimator__learning_rate": Real(0.01, 0.05, prior="log-uniform"),
+                "estimator__subsample": Real(0.6, 1.0),
+                "estimator__colsample_bytree": Real(0.6, 1.0),
+                "estimator__gamma": Real(0, 1.0),
+                "estimator__random_state": Categorical([42]),
+            },
+        },
         "SVM": {
             "base_model": SVR(kernel="rbf"),
             "param_grid": {
@@ -83,6 +97,20 @@ MODEL_TEST = {
                 "estimator__min_samples_leaf": Integer(3, 6),
                 "estimator__max_features": Categorical(["sqrt", "log2", None]),
                 "estimator__bootstrap": Categorical([True, False]),
+                "estimator__random_state": Categorical([42]),
+            },
+        },
+        "XGBoost": {
+            "base_model": XGBClassifier(),
+            "param_grid": {
+                "estimator__n_estimators": Integer(300, 700),
+                "estimator__max_depth": Integer(8, 15),
+                "estimator__learning_rate": Real(0.01, 0.3, prior="log-uniform"),
+                "estimator__subsample": Real(0.6, 1.0),
+                "estimator__colsample_bytree": Real(0.8, 1.0),
+                "estimator__gamma": Real(0, 2.0),
+                "estimator__reg_alpha": Real(0, 10.0),
+                "estimator__reg_lambda": Real(0, 30.0),
                 "estimator__random_state": Categorical([42]),
             },
         },

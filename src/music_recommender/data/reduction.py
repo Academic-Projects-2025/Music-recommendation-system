@@ -23,7 +23,6 @@ def multi_output_mutual_info(X, y):
     return mi_scores / y.shape[1]
 
 
-
 class ReduceNumFeature(BaseEstimator, TransformerMixin):
     def __init__(self, k=150, variance_thershold=0.95) -> None:
         super().__init__()
@@ -77,4 +76,3 @@ class ReduceNumFeature(BaseEstimator, TransformerMixin):
             X_filt_selected = X_filt_uncorr
 
         return X_filt_selected
-
