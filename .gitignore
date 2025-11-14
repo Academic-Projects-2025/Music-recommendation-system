@@ -39,7 +39,7 @@ models/*.pkl
 models/*.joblib
 models/*.h5
 models/*.pt
-models/*
+
 
 # Environment
 .env
@@ -55,8 +55,12 @@ models/*
 .DS_Store
 Thumbs.db
 
+
+api/
 # MLflow
 mlruns/
 
 # Logs
 *.log
+
+lazygit*

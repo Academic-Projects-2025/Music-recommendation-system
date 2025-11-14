@@ -1,0 +1,14 @@
+{
+  "target": "acousticness",
+  "model_type": "SVR",
+  "trained_date": "2025-10-19",
+  "hyperparameters": {
+    "C": 1,
+    "epsilon": 0.15,
+    "gamma": 0.001
+  },
+  "performance": {
+    "test_r2": 0.49349287503875905,
+    "test_rmse": 0.24561639216493505
+  }
+}

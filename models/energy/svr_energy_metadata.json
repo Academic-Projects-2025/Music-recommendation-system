@@ -1,0 +1,14 @@
+{
+  "target": "energy",
+  "model_type": "SVR",
+  "trained_date": "2025-10-19",
+  "hyperparameters": {
+    "C": 0.1,
+    "epsilon": 0.01,
+    "gamma": 0.01
+  },
+  "performance": {
+    "test_r2": 0.6262111345121353,
+    "test_rmse": 0.1626874326579338
+  }
+}
