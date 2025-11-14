@@ -17,7 +17,6 @@ from src.music_recommender.utils.logger import get_logger
 logger = get_logger(context="api")
 cfg = Config()
 
-# Global variables for models
 recommender: Optional[MusicRecommender] = None
 extraction_pipeline = None
 
@@ -37,7 +36,6 @@ def startup_event():
     try:
         logger.info("Loading models...")
 
-        # Load extraction pipeline
         extraction_pipeline_path = cfg.paths.models / "extraction_pipeline.joblib"
         if extraction_pipeline_path.exists():
             extraction_pipeline = joblib.load(extraction_pipeline_path)
@@ -47,13 +45,11 @@ def startup_event():
                 f"Extraction pipeline not found at {extraction_pipeline_path}"
             )
 
-        # Load recommender system
         hybrid_model_path = cfg.paths.models / "hybrid_model.joblib"
         spotify_dataset_path = (
             cfg.paths.data / "raw/spotify-12m-songs/tracks_features.csv"
         )
 
-        # Debug: Print paths being checked
         logger.info(f"Looking for hybrid model at: {hybrid_model_path}")
         logger.info(f"Looking for dataset at: {spotify_dataset_path}")
         logger.info(f"Hybrid model exists: {hybrid_model_path.exists()}")
@@ -86,18 +82,16 @@ async def lifespan(app: FastAPI):
     logger.info("Shutting down...")
 
 
-# Initialize FastAPI app with lifespan
 app = FastAPI(
     title="Music Recommender API",
     description="AI-powered music recommendation system based on audio analysis",
     version="1.0.0",
-    lifespan=lifespan,  # ← IMPORTANT: Attach lifespan manager
+    lifespan=lifespan,
 )
 
-# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure based on your needs
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -137,46 +131,40 @@ async def recommend_from_audio(
     Upload an MP3, WAV, or M4A file to get similar track recommendations
     based on audio feature analysis.
     """
-    # Check models are loaded
     if recommender is None or extraction_pipeline is None:
         raise HTTPException(
             status_code=503,
             detail="Models not initialized. Please ensure both extraction pipeline and recommender are loaded.",
         )
 
-    # Validate file type
     if not file.filename.endswith((".mp3", ".wav", ".m4a")):
         raise HTTPException(
             status_code=400,
             detail="Invalid file type. Please upload MP3, WAV, or M4A files.",
         )
 
-    tmp_file_path = None  # Initialize to avoid UnboundLocalError
+    tmp_file_path = None
 
     try:
         # Save uploaded file temporarily
         with tempfile.NamedTemporaryFile(
             delete=False, suffix=Path(file.filename).suffix
         ) as tmp_file:
-            content = await file.read()  # ✅ Fixed syntax
+            content = await file.read()
             tmp_file.write(content)
             tmp_file_path = tmp_file.name
 
-        # Extract audio features
         logger.info(f"Extracting features from {file.filename}")
         file_path_series = pd.Series([tmp_file_path])
         audio_features = extraction_pipeline.transform(file_path_series)
         audio_features_df = pd.DataFrame(audio_features)
 
-        # Get recommendations
         recommendations_df = recommender.get_recommendations_from_audio(
             audio_features=audio_features_df, top_n=top_n, return_scores=True
         )
 
-        # Clean up temporary file
         Path(tmp_file_path).unlink(missing_ok=True)
 
-        # Format response
         recommendations_list = recommendations_df[
             ["name", "album", "artists", "similarity_score"]
         ].to_dict("records")
