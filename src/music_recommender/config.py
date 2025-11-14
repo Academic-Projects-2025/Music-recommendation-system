@@ -28,7 +28,7 @@ class PathConfig(BaseSettings):
     audio_spotify :Path = Field(default_factory=lambda:PROJECT_ROOT/"data"/"processed"/"audio")
     processed :Path = Field(default_factory=lambda:PROJECT_ROOT/"data"/"processed")
     interim :Path = Field(default_factory=lambda:PROJECT_ROOT/"data"/"interim")
-    
+    logs: Path = Field(default_factory=lambda: PROJECT_ROOT / "logs")
 
     def model_post_init(self, __context):
         self.models.mkdir(exist_ok=True, parents=True)
@@ -39,3 +39,6 @@ class Config(BaseSettings):
     model_config = SettingsConfigDict(env_nested_delimiter="__")
 
     paths: PathConfig = Field(default_factory=lambda: PathConfig())
+
+
+

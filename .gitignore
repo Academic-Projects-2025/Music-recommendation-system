@@ -55,6 +55,8 @@ models/*.pt
 .DS_Store
 Thumbs.db
 
+
+api/
 # MLflow
 mlruns/
 
