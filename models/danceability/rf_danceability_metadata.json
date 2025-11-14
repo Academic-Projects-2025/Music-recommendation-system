@@ -1,0 +1,26 @@
+{
+  "target_feature": "danceability",
+  "model_type": "RandomForestRegressor",
+  "trained_date": "2025-10-19 15:46:37",
+  "hyperparameters": {
+    "n_estimators": 200,
+    "max_depth": 8,
+    "min_samples_split": 20,
+    "min_samples_leaf": 10,
+    "max_features": "sqrt",
+    "max_samples": 0.9,
+    "random_state": 42
+  },
+  "performance": {
+    "train_r2": 0.6198,
+    "test_r2":  0.4549,
+    "overfitting_gap": 0.1650
+  },
+  "training_data": {
+    "n_samples": 1729,
+    "n_features": 78,
+    "train_size": 1383,
+    "test_size": 346
+  }
+}
+

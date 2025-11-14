@@ -1,0 +1,14 @@
+{
+  "target": "loudness",
+  "model_type": "RandomForest",
+  "trained_date": "2025-10-20",
+  "hyperparameters": {
+    "C": 100,
+    "epsilon": 0.2,
+    "gamma": 0.001
+  },
+  "performance": {
+    "test_r2": 0.46376354648972684,
+    "test_rmse": 3.274822650451352
+  }
+}
