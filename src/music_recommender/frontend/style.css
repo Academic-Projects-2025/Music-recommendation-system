@@ -1,0 +1,355 @@
+/* Main App Background - Kanagawa Dark */
+.stApp {
+  background: #1f1f28;
+  color: #dcd7ba;
+}
+
+/* Sidebar Styling - Kanagawa Dark */
+section[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #16161d 0%, #1a1a22 100%);
+  border-right: 3px solid #54546d;
+}
+
+section[data-testid="stSidebar"] .stRadio > label {
+  color: #dcd7ba;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Kanagawa Card */
+.card {
+  background: #2a2a37;
+  border-radius: 20px;
+  padding: 25px;
+  margin: 15px 0;
+  border: 2px solid #54546d;
+  box-shadow: 0 6px 20px rgba(84, 84, 109, 0.15);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #727169;
+  box-shadow: 0 8px 25px rgba(114, 113, 105, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Gradient Text - Kanagawa Colors */
+.gradient-text {
+  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 50%, #7fb4ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(8deg);
+  }
+}
+
+/* Main Title */
+.main-title {
+  font-size: 4rem;
+  text-align: center;
+  margin: 20px 0;
+  text-shadow: 0 3px 15px rgba(126, 156, 216, 0.25);
+}
+
+.subtitle {
+  text-align: center;
+  color: #7e9cd8;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* Soft Border */
+.neon-border {
+  border: 2px solid #54546d;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(84, 84, 109, 0.12);
+  background: #2a2a37;
+}
+
+/* Upload Box */
+.upload-box {
+  background: linear-gradient(135deg, #2a2a37 0%, #363646 100%);
+  border: 3px dashed #727169;
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: #7e9cd8;
+  background: linear-gradient(135deg, #363646 0%, #414155 100%);
+  box-shadow: 0 8px 25px rgba(126, 156, 216, 0.18);
+}
+
+/* Buttons - Kanagawa Gradient */
+.stButton > button {
+  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 100%);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 12px 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 5px 20px rgba(126, 156, 216, 0.18);
+}
+
+.stButton > button:hover {
+  background: linear-gradient(90deg, #957fb8 0%, #7e9cd8 100%);
+  transform: scale(1.03);
+  box-shadow: 0 7px 25px rgba(149, 127, 184, 0.25);
+}
+
+/* Glow on Hover */
+.glow-on-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 8px 25px rgba(126, 156, 216, 0.2);
+  border-color: #7e9cd8;
+}
+
+/* Rounded Button */
+.rounded-button {
+  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 100%);
+  border-radius: 25px;
+  padding: 10px 25px;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rounded-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 20px rgba(126, 156, 216, 0.25);
+}
+
+/* Status Badges - Kanagawa */
+.status-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 5px;
+  text-align: center;
+}
+
+.status-healthy {
+  background: linear-gradient(90deg, #76946a 0%, #8ba475 100%);
+  color: white;
+  box-shadow: 0 5px 15px rgba(118, 148, 106, 0.2);
+}
+
+.status-degraded {
+  background: linear-gradient(90deg, #c98a4a 0%, #e09a5e 100%);
+  color: white;
+  box-shadow: 0 5px 15px rgba(201, 138, 74, 0.2);
+}
+
+.status-offline {
+  background: linear-gradient(90deg, #c34043 0%, #d85a5d 100%);
+  color: white;
+  box-shadow: 0 5px 15px rgba(195, 64, 67, 0.2);
+}
+
+/* Metrics */
+div[data-testid="stMetricValue"] {
+  font-size: 2.5rem;
+  color: #7e9cd8;
+  text-shadow: 0 3px 10px rgba(126, 156, 216, 0.25);
+}
+
+div[data-testid="stMetricLabel"] {
+  color: #7fb4ca;
+  font-weight: 600;
+}
+
+/* Progress Bar */
+.stProgress > div > div > div > div {
+  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 100%);
+}
+
+/* File Uploader */
+.uploadedFile {
+  background: #2a2a37;
+  border-radius: 10px;
+  border: 2px solid #727169;
+}
+
+/* Divider */
+hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 50%, #7fb4ca 100%);
+  margin: 30px 0;
+  opacity: 0.5;
+}
+
+/* Song Card */
+.song-card {
+  background: linear-gradient(135deg, #2a2a37 0%, #363646 100%);
+  border: 2px solid #54546d;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.song-card:hover {
+  border-color: #727169;
+  box-shadow: 0 8px 25px rgba(114, 113, 105, 0.15);
+  transform: translateX(5px);
+}
+
+/* Score Badge */
+.score-badge {
+  background: linear-gradient(135deg, #7e9cd8 0%, #957fb8 100%);
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  box-shadow: 0 5px 20px rgba(126, 156, 216, 0.2);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #7e9cd8;
+  font-size: 1.2rem;
+}
+
+.empty-state h1 {
+  font-size: 4rem;
+  filter: grayscale(0%);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Slider */
+.stSlider > div > div > div > div {
+  background: #7e9cd8;
+}
+
+/* Radio Buttons */
+.stRadio > div {
+  background: #2a2a37;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #54546d;
+}
+
+/* Audio Player */
+audio {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* Input Fields */
+.stTextInput > div > div > input {
+  background: #2a2a37;
+  border: 2px solid #54546d;
+  border-radius: 10px;
+  color: #dcd7ba;
+}
+
+.stTextInput > div > div > input:focus {
+  border-color: #7e9cd8;
+  box-shadow: 0 0 15px rgba(126, 156, 216, 0.2);
+}
+
+/* Select Box */
+.stSelectbox > div > div {
+  background: #2a2a37;
+  border: 2px solid #54546d;
+  border-radius: 10px;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+  background: #2a2a37;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.stTabs [data-baseweb="tab"] {
+  color: #c8c093;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.stTabs [aria-selected="true"] {
+  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 100%);
+  color: white;
+}
+
+/* Expander */
+.streamlit-expanderHeader {
+  background: #2a2a37;
+  border-radius: 10px;
+  color: #dcd7ba;
+  font-weight: 600;
+  border: 1px solid #54546d;
+}
+
+/* Success/Error/Warning Messages */
+.stSuccess {
+  background: #2d3f2f;
+  border-left: 5px solid #76946a;
+  color: #98bb6c;
+  font-weight: 500;
+}
+
+.stError {
+  background: #3f2d2e;
+  border-left: 5px solid #c34043;
+  color: #e82424;
+  font-weight: 500;
+}
+
+.stWarning {
+  background: #3f352a;
+  border-left: 5px solid #c98a4a;
+  color: #ff9e3b;
+  font-weight: 500;
+}
+
+.stInfo {
+  background: #2a3546;
+  border-left: 5px solid #7e9cd8;
+  color: #7fb4ca;
+  font-weight: 500;
+}

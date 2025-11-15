@@ -111,8 +111,8 @@ if page == "🏠 Home":
         st.markdown(
             """
         <div class='card fade-in' style='text-align: center;'>
-            <h2 style='color: #b39ddb;'>🎶 Welcome to the Future of Music Discovery</h2>
-            <p style='font-size: 1.1rem; color: #7b8794; margin: 20px 0;'>
+            <h2 style='color: #7e9cd8;'>🎶 Welcome to the Future of Music Discovery</h2>
+            <p style='font-size: 1.1rem; color: #c8c093; margin: 20px 0;'>
                 Upload any audio clip and let our AI find your perfect musical matches using 
                 advanced MFCC feature extraction and hybrid machine learning models.
             </p>
@@ -145,7 +145,7 @@ if page == "🏠 Home":
                 unsafe_allow_html=True,
             )
             st.markdown(
-                "<p style='text-align: center; margin-top: 15px;'>All systems operational</p>",
+                "<p style='text-align: center; margin-top: 15px; color: #c8c093;'>All systems operational</p>",
                 unsafe_allow_html=True,
             )
         elif status == "degraded":
@@ -154,7 +154,7 @@ if page == "🏠 Home":
                 unsafe_allow_html=True,
             )
             st.markdown(
-                "<p style='text-align: center; margin-top: 15px;'>Some features limited</p>",
+                "<p style='text-align: center; margin-top: 15px; color: #c8c093;'>Some features limited</p>",
                 unsafe_allow_html=True,
             )
         else:
@@ -163,7 +163,7 @@ if page == "🏠 Home":
                 unsafe_allow_html=True,
             )
             st.markdown(
-                "<p style='text-align: center; margin-top: 15px;'>Cannot reach API</p>",
+                "<p style='text-align: center; margin-top: 15px; color: #c8c093;'>Cannot reach API</p>",
                 unsafe_allow_html=True,
             )
         st.markdown("</div>", unsafe_allow_html=True)
@@ -176,7 +176,7 @@ if page == "🏠 Home":
                 unsafe_allow_html=True,
             )
             st.markdown(
-                "<p style='text-align: center; margin-top: 15px;'>AI ready to recommend</p>",
+                "<p style='text-align: center; margin-top: 15px; color: #c8c093;'>AI ready to recommend</p>",
                 unsafe_allow_html=True,
             )
         else:
@@ -185,7 +185,7 @@ if page == "🏠 Home":
                 unsafe_allow_html=True,
             )
             st.markdown(
-                "<p style='text-align: center; margin-top: 15px;'>Check model files</p>",
+                "<p style='text-align: center; margin-top: 15px; color: #c8c093;'>Check model files</p>",
                 unsafe_allow_html=True,
             )
         st.markdown("</div>", unsafe_allow_html=True)
@@ -193,11 +193,11 @@ if page == "🏠 Home":
     with col3:
         st.markdown("<div class='card'>", unsafe_allow_html=True)
         st.markdown(
-            "<div class='status-badge' style='background: linear-gradient(90deg, #d4a5d4 0%, #f5a8c8 100%); color: white;'>💾 Database</div>",
+            "<div class='status-badge' style='background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 100%); color: white;'>💾 Database</div>",
             unsafe_allow_html=True,
         )
         st.markdown(
-            "<p style='text-align: center; margin-top: 15px; color: #7b8794;'>Spotify tracks ready</p>",
+            "<p style='text-align: center; margin-top: 15px; color: #c8c093;'>Spotify tracks ready</p>",
             unsafe_allow_html=True,
         )
         st.markdown("</div>", unsafe_allow_html=True)
@@ -216,9 +216,9 @@ if page == "🏠 Home":
         st.markdown(
             """
         <div class='card glow-on-hover' style='text-align: center;'>
-            <h1 style='color: #d4a5d4;'>🎵</h1>
-            <h4 style='color: #5a4a6a;'>Audio Upload</h4>
-            <p style='font-size: 0.9rem; color: #7b8794;'>Support for MP3, WAV, M4A formats</p>
+            <h1 style='color: #7e9cd8;'>🎵</h1>
+            <h4 style='color: #dcd7ba;'>Audio Upload</h4>
+            <p style='font-size: 0.9rem; color: #c8c093;'>Support for MP3, WAV, M4A formats</p>
         </div>
         """,
             unsafe_allow_html=True,
@@ -228,9 +228,9 @@ if page == "🏠 Home":
         st.markdown(
             """
         <div class='card glow-on-hover' style='text-align: center;'>
-            <h1 style='color: #f5a8c8;'>🤖</h1>
-            <h4 style='color: #5a4a6a;'>AI Analysis</h4>
-            <p style='font-size: 0.9rem; color: #7b8794;'>MFCC feature extraction & prediction</p>
+            <h1 style='color: #957fb8;'>🤖</h1>
+            <h4 style='color: #dcd7ba;'>AI Analysis</h4>
+            <p style='font-size: 0.9rem; color: #c8c093;'>MFCC/Spectrogramme stats feature extraction & prediction</p>
         </div>
         """,
             unsafe_allow_html=True,
@@ -240,9 +240,9 @@ if page == "🏠 Home":
         st.markdown(
             """
         <div class='card glow-on-hover' style='text-align: center;'>
-            <h1 style='color: #a8d5ba;'>🎯</h1>
-            <h4 style='color: #5a4a6a;'>Smart Matching</h4>
-            <p style='font-size: 0.9rem; color: #7b8794;'>Cosine similarity algorithm</p>
+            <h1 style='color: #7fb4ca;'>🎯</h1>
+            <h4 style='color: #dcd7ba;'>Smart Matching</h4>
+            <p style='font-size: 0.9rem; color: #c8c093;'>Cosine similarity algorithm</p>
         </div>
         """,
             unsafe_allow_html=True,
@@ -252,9 +252,9 @@ if page == "🏠 Home":
         st.markdown(
             """
         <div class='card glow-on-hover' style='text-align: center;'>
-            <h1 style='color: #b39ddb;'>⭐</h1>
-            <h4 style='color: #5a4a6a;'>Save Favorites</h4>
-            <p style='font-size: 0.9rem; color: #7b8794;'>Build your collection</p>
+            <h1 style='color: #7e9cd8;'>⭐</h1>
+            <h4 style='color: #dcd7ba;'>Save Favorites</h4>
+            <p style='font-size: 0.9rem; color: #c8c093;'>Build your collection</p>
         </div>
         """,
             unsafe_allow_html=True,
@@ -285,7 +285,7 @@ elif page == "🎧 Upload & Recommend":
     # Upload Section
     st.markdown("<div class='card'>", unsafe_allow_html=True)
     st.markdown(
-        "<h3 style='color: #d4a5d4;'>📤 Upload Your Audio</h3>", unsafe_allow_html=True
+        "<h3 style='color: #7e9cd8;'>📤 Upload Your Audio</h3>", unsafe_allow_html=True
     )
 
     uploaded_file = st.file_uploader(
@@ -308,7 +308,7 @@ elif page == "🎧 Upload & Recommend":
         # Audio Preview
         st.markdown("<div class='card'>", unsafe_allow_html=True)
         st.markdown(
-            "<h3 style='color: #f5a8c8;'>🎵 Preview</h3>", unsafe_allow_html=True
+            "<h3 style='color: #957fb8;'>🎵 Preview</h3>", unsafe_allow_html=True
         )
         st.audio(uploaded_file)
         st.markdown("</div>", unsafe_allow_html=True)
@@ -316,7 +316,7 @@ elif page == "🎧 Upload & Recommend":
         # Settings
         st.markdown("<div class='card'>", unsafe_allow_html=True)
         st.markdown(
-            "<h3 style='color: #a8d5ba;'>⚙️ Settings</h3>", unsafe_allow_html=True
+            "<h3 style='color: #7fb4ca;'>⚙️ Settings</h3>", unsafe_allow_html=True
         )
         top_n = st.slider(
             "Number of Recommendations",
@@ -368,21 +368,21 @@ elif page == "🎧 Upload & Recommend":
 
                     with col1:
                         st.markdown(
-                            f"<h2 style='color: #d4a5d4; text-align: center;'>{idx + 1}</h2>",
+                            f"<h2 style='color: #7e9cd8; text-align: center;'>{idx + 1}</h2>",
                             unsafe_allow_html=True,
                         )
 
                     with col2:
                         st.markdown(
-                            f"<h3 style='color: #5a4a6a; margin: 0;'>{song['name']}</h3>",
+                            f"<h3 style='color: #dcd7ba; margin: 0;'>{song['name']}</h3>",
                             unsafe_allow_html=True,
                         )
                         st.markdown(
-                            f"<p style='margin: 5px 0; color: #7b8794;'>👤 <strong>{song['artists']}</strong></p>",
+                            f"<p style='margin: 5px 0; color: #c8c093;'>👤 <strong>{song['artists']}</strong></p>",
                             unsafe_allow_html=True,
                         )
                         st.markdown(
-                            f"<p style='margin: 5px 0; color: #b39ddb;'>💿 {song['album']}</p>",
+                            f"<p style='margin: 5px 0; color: #957fb8;'>💿 {song['album']}</p>",
                             unsafe_allow_html=True,
                         )
 
@@ -393,7 +393,7 @@ elif page == "🎧 Upload & Recommend":
                             unsafe_allow_html=True,
                         )
                         st.markdown(
-                            "<p style='text-align: center; font-size: 0.8rem; color: #7b8794;'>Match</p>",
+                            "<p style='text-align: center; font-size: 0.8rem; color: #c8c093;'>Match</p>",
                             unsafe_allow_html=True,
                         )
 
@@ -413,8 +413,8 @@ elif page == "🎧 Upload & Recommend":
             """
         <div class='empty-state'>
             <h1>🎵</h1>
-            <h3>No audio file uploaded yet</h3>
-            <p>Upload an audio file above to get started with AI-powered recommendations</p>
+            <h3 style='color: #dcd7ba;'>No audio file uploaded yet</h3>
+            <p style='color: #c8c093;'>Upload an audio file above to get started with AI-powered recommendations</p>
         </div>
         """,
             unsafe_allow_html=True,
@@ -436,7 +436,7 @@ elif page == "⭐ Favorites":
         col1, col2 = st.columns([3, 1])
         with col1:
             st.markdown(
-                f"<h3 style='color: #d4a5d4;'>💾 {len(st.session_state['favorites'])} songs saved</h3>",
+                f"<h3 style='color: #7e9cd8;'>💾 {len(st.session_state['favorites'])} songs saved</h3>",
                 unsafe_allow_html=True,
             )
         with col2:
@@ -453,26 +453,26 @@ elif page == "⭐ Favorites":
 
             with col1:
                 st.markdown(
-                    f"<h2 style='color: #f5a8c8; text-align: center;'>{idx + 1}</h2>",
+                    f"<h2 style='color: #957fb8; text-align: center;'>{idx + 1}</h2>",
                     unsafe_allow_html=True,
                 )
 
             with col2:
                 st.markdown(
-                    f"<h3 style='color: #5a4a6a; margin: 0;'>{song['name']}</h3>",
+                    f"<h3 style='color: #dcd7ba; margin: 0;'>{song['name']}</h3>",
                     unsafe_allow_html=True,
                 )
                 st.markdown(
-                    f"<p style='margin: 5px 0; color: #7b8794;'>👤 <strong>{song['artists']}</strong></p>",
+                    f"<p style='margin: 5px 0; color: #c8c093;'>👤 <strong>{song['artists']}</strong></p>",
                     unsafe_allow_html=True,
                 )
                 st.markdown(
-                    f"<p style='margin: 5px 0; color: #b39ddb;'>💿 {song['album']}</p>",
+                    f"<p style='margin: 5px 0; color: #957fb8;'>💿 {song['album']}</p>",
                     unsafe_allow_html=True,
                 )
                 if "similarity_score" in song:
                     st.markdown(
-                        f"<p style='margin: 5px 0; color: #a8d5ba;'>🎯 Match: {song['similarity_score'] * 100:.1f}%</p>",
+                        f"<p style='margin: 5px 0; color: #7fb4ca;'>🎯 Match: {song['similarity_score'] * 100:.1f}%</p>",
                         unsafe_allow_html=True,
                     )
 
@@ -489,10 +489,10 @@ elif page == "⭐ Favorites":
             """
         <div class='empty-state'>
             <h1>⭐</h1>
-            <h3>No favorites yet</h3>
-            <p>Start exploring music and save your favorite recommendations!</p>
+            <h3 style='color: #dcd7ba;'>No favorites yet</h3>
+            <p style='color: #c8c093;'>Start exploring music and save your favorite recommendations!</p>
             <br>
-            <p style='font-size: 0.9rem; color: #A259FF;'>Go to Upload & Recommend to discover new music</p>
+            <p style='font-size: 0.9rem; color: #7e9cd8;'>Go to Upload & Recommend to discover new music</p>
         </div>
         """,
             unsafe_allow_html=True,
@@ -517,8 +517,8 @@ elif page == "ℹ️ About":
             """
         <div class='card fade-in' style='text-align: center;'>
             <h1 style='font-size: 4rem;'>🎶💜✨</h1>
-            <h2 style='color: #b39ddb;'>AI-Powered Music Discovery</h2>
-            <p style='font-size: 1.1rem; line-height: 1.8; margin: 25px 0; color: #7b8794;'>
+            <h2 style='color: #7e9cd8;'>AI-Powered Music Discovery</h2>
+            <p style='font-size: 1.1rem; line-height: 1.8; margin: 25px 0; color: #c8c093;'>
                 SoundMatch AI uses cutting-edge machine learning to analyze your audio files 
                 and recommend similar tracks from a massive Spotify database.
             </p>
@@ -541,8 +541,8 @@ elif page == "ℹ️ About":
         st.markdown(
             """
         <div class='card glow-on-hover'>
-            <h3 style='color: #d4a5d4;'>🎵 Audio Processing</h3>
-            <ul style='line-height: 2; font-size: 1.05rem; color: #5a4a6a;'>
+            <h3 style='color: #7e9cd8;'>🎵 Audio Processing</h3>
+            <ul style='line-height: 2; font-size: 1.05rem; color: #dcd7ba;'>
                 <li><strong>MFCC Extraction:</strong> Mel-frequency cepstral coefficients</li>
                 <li><strong>Spectral Analysis:</strong> Frequency domain features</li>
                 <li><strong>Tempo Detection:</strong> Beat tracking algorithms</li>
@@ -557,8 +557,8 @@ elif page == "ℹ️ About":
         st.markdown(
             """
         <div class='card glow-on-hover'>
-            <h3 style='color: #f5a8c8;'>🤖 Machine Learning</h3>
-            <ul style='line-height: 2; font-size: 1.05rem; color: #5a4a6a;'>
+            <h3 style='color: #957fb8;'>🤖 Machine Learning</h3>
+            <ul style='line-height: 2; font-size: 1.05rem; color: #dcd7ba;'>
                 <li><strong>Hybrid Model:</strong> Stacking ensemble</li>
                 <li><strong>Feature Prediction:</strong> Multi-output regression</li>
                 <li><strong>Similarity Matching:</strong> Cosine similarity</li>
@@ -578,21 +578,21 @@ elif page == "ℹ️ About":
     )
 
     steps = [
-        ("1️⃣", "Upload Audio", "You upload an audio file (MP3, WAV, or M4A)", "#d4a5d4"),
+        ("1️⃣", "Upload Audio", "You upload an audio file (MP3, WAV, or M4A)", "#7e9cd8"),
         (
             "2️⃣",
             "Feature Extraction",
             "MFCC and spectral features are extracted",
-            "#f5a8c8",
+            "#957fb8",
         ),
-        ("3️⃣", "AI Prediction", "Hybrid model predicts music attributes", "#a8d5ba"),
+        ("3️⃣", "AI Prediction", "Hybrid model predicts music attributes", "#7fb4ca"),
         (
             "4️⃣",
             "Similarity Search",
             "Cosine similarity finds matching tracks",
-            "#d4a5d4",
+            "#7e9cd8",
         ),
-        ("5️⃣", "Get Results", "Receive personalized recommendations", "#f5a8c8"),
+        ("5️⃣", "Get Results", "Receive personalized recommendations", "#957fb8"),
     ]
 
     for emoji, title, description, color in steps:
@@ -600,7 +600,7 @@ elif page == "ℹ️ About":
             f"""
         <div class='card glow-on-hover' style='border-left: 4px solid {color};'>
             <h2 style='color: {color}; margin: 0;'>{emoji} {title}</h2>
-            <p style='font-size: 1.1rem; margin-top: 10px; color: #7b8794;'>{description}</p>
+            <p style='font-size: 1.1rem; margin-top: 10px; color: #c8c093;'>{description}</p>
         </div>
         """,
             unsafe_allow_html=True,
@@ -620,8 +620,8 @@ elif page == "ℹ️ About":
         st.markdown(
             """
         <div class='card' style='text-align: center;'>
-            <h3 style='color: #d4a5d4;'>🎵 Audio Attributes</h3>
-            <ul style='text-align: left; line-height: 2; color: #5a4a6a;'>
+            <h3 style='color: #7e9cd8;'>🎵 Audio Attributes</h3>
+            <ul style='text-align: left; line-height: 2; color: #dcd7ba;'>
                 <li>Danceability</li>
                 <li>Energy</li>
                 <li>Loudness</li>
@@ -636,8 +636,8 @@ elif page == "ℹ️ About":
         st.markdown(
             """
         <div class='card' style='text-align: center;'>
-            <h3 style='color: #f5a8c8;'>🎹 Musical Properties</h3>
-            <ul style='text-align: left; line-height: 2; color: #5a4a6a;'>
+            <h3 style='color: #957fb8;'>🎹 Musical Properties</h3>
+            <ul style='text-align: left; line-height: 2; color: #dcd7ba;'>
                 <li>Key</li>
                 <li>Mode</li>
                 <li>Tempo</li>
@@ -652,8 +652,8 @@ elif page == "ℹ️ About":
         st.markdown(
             """
         <div class='card' style='text-align: center;'>
-            <h3 style='color: #a8d5ba;'>🎤 Content Analysis</h3>
-            <ul style='text-align: left; line-height: 2; color: #5a4a6a;'>
+            <h3 style='color: #7fb4ca;'>🎤 Content Analysis</h3>
+            <ul style='text-align: left; line-height: 2; color: #dcd7ba;'>
                 <li>Speechiness</li>
                 <li>Acousticness</li>
                 <li>Instrumentalness</li>
@@ -670,13 +670,13 @@ elif page == "ℹ️ About":
     st.markdown(
         """
     <div class='card' style='text-align: center;'>
-        <h3 style='color: #b39ddb;'>💜 Built with Love & AI</h3>
-        <p style='font-size: 1.1rem; line-height: 1.8; color: #7b8794;'>
+        <h3 style='color: #7e9cd8;'>💜 Built with Love & AI</h3>
+        <p style='font-size: 1.1rem; line-height: 1.8; color: #c8c093;'>
             SoundMatch AI combines the power of machine learning, audio signal processing, 
             and massive datasets to help you discover your next favorite song.
         </p>
         <br>
-        <p style='color: #d4a5d4; font-size: 1.2rem;'>
+        <p style='color: #7e9cd8; font-size: 1.2rem;'>
             🎵 Start exploring music today! 🎵
         </p>
     </div>
