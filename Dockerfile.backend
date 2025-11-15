@@ -1,7 +1,5 @@
-# Backend container - FastAPI service
 FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
 
-# Install system dependencies for audio processing
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libsndfile1 \
     ffmpeg \
@@ -15,7 +13,6 @@ WORKDIR /app
 ENV UV_COMPILE_BYTECODE=1
 ENV UV_LINK_MODE=copy
 
-# Copy dependency files
 COPY pyproject.toml uv.lock ./
 
 # Install dependencies (without the project)
@@ -32,7 +29,6 @@ COPY models/*.csv ./models/
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked --no-dev
 
-# Create necessary directories
 RUN mkdir -p data/raw data/processed models logs
 
 COPY docker/backend-entrypoint.sh /backend-entrypoint.sh

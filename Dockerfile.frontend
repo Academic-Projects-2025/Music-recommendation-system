@@ -1,21 +1,16 @@
-# Frontend container - Streamlit UI
 FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
 
-# Set working directory
 WORKDIR /app
 
-# Enable bytecode compilation
 ENV UV_COMPILE_BYTECODE=1
 ENV UV_LINK_MODE=copy
 
-# Copy dependency files
 COPY pyproject.toml uv.lock ./
 
 # Install dependencies (without the project)
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked --no-install-project --no-dev
 
-# Copy only frontend files
 COPY src/music_recommender/frontend/ ./src/music_recommender/frontend/
 COPY src/music_recommender/config.py ./src/music_recommender/
 COPY src/music_recommender/__init__.py ./src/music_recommender/
@@ -27,7 +22,6 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # Expose Streamlit port
 EXPOSE 8501
 
-# Run Streamlit
 CMD ["uv", "run", "streamlit", "run", "src/music_recommender/frontend/app.py", \
      "--server.address", "0.0.0.0", \
      "--server.port", "8501", \
