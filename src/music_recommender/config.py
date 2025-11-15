@@ -41,6 +41,3 @@ class Config(BaseSettings):
     model_config = SettingsConfigDict(env_nested_delimiter="__")
 
     paths: PathConfig = Field(default_factory=lambda: PathConfig())
-
-
-

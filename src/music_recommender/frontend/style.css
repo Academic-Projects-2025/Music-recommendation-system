@@ -1,41 +1,113 @@
-/* Main App Background - Kanagawa Dark */
-.stApp {
-  background: #1f1f28;
-  color: #dcd7ba;
+/* ============================================
+   CSS VARIABLES - KANAGAWA PAPER WHITE THEME
+   Change these to update the entire theme
+   ============================================ */
+:root {
+  /* Background Colors */
+  --bg-main: #f2ecbc;
+  --bg-sidebar: #e5ddb0;
+  --bg-sidebar-bottom: #e9e7d3;
+  --bg-card: #e4d794;
+  --bg-card-alt: #d5cea3;
+  --bg-card-hover: #c6c48f;
+
+  /* Text Colors */
+  --text-primary: #1f1f28;
+  --text-secondary: #545464;
+  --text-muted: #8a8980;
+
+  /* Accent Colors */
+  --accent-blue: #2d4f67;
+  --accent-purple: #624c83;
+  --accent-cyan: #0d7f8a;
+
+  /* Border Colors */
+  --border-primary: #c9cbd1;
+  --border-secondary: #8a8980;
+
+  /* Status Colors */
+  --status-success: #6f894e;
+  --status-success-light: #8a9b68;
+  --status-warning: #c4a366;
+  --status-warning-light: #d9b486;
+  --status-error: #c84053;
+  --status-error-light: #d9545c;
+
+  /* Shadow Colors */
+  --shadow-color: rgba(201, 203, 209, 0.15);
+  --shadow-hover: rgba(138, 137, 128, 0.2);
 }
 
-/* Sidebar Styling - Kanagawa Dark */
+/* ============================================
+   MAIN APP STYLING
+   ============================================ */
+.stApp {
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+/* ============================================
+   SIDEBAR STYLING
+   ============================================ */
 section[data-testid="stSidebar"] {
-  background: linear-gradient(180deg, #16161d 0%, #1a1a22 100%);
-  border-right: 3px solid #54546d;
+  background: linear-gradient(180deg, var(--bg-sidebar) 0%, var(--bg-sidebar-bottom) 100%);
+  border-right: 3px solid var(--border-primary);
 }
 
 section[data-testid="stSidebar"] .stRadio > label {
-  color: #dcd7ba;
+  color: var(--text-primary);
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-/* Kanagawa Card */
+/* ============================================
+   CARD COMPONENTS
+   ============================================ */
 .card {
-  background: #2a2a37;
+  background: var(--bg-card);
   border-radius: 20px;
   padding: 25px;
   margin: 15px 0;
-  border: 2px solid #54546d;
-  box-shadow: 0 6px 20px rgba(84, 84, 109, 0.15);
+  border: 2px solid var(--border-primary);
+  box-shadow: 0 6px 20px var(--shadow-color);
   transition: all 0.3s ease;
 }
 
 .card:hover {
-  border-color: #727169;
-  box-shadow: 0 8px 25px rgba(114, 113, 105, 0.2);
+  border-color: var(--border-secondary);
+  box-shadow: 0 8px 25px var(--shadow-hover);
   transform: translateY(-3px);
 }
 
-/* Gradient Text - Kanagawa Colors */
+/* Override ALL text colors inside cards */
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6,
+.card p,
+.card li,
+.card strong,
+.card span {
+  color: var(--text-primary) !important;
+}
+
+/* Card headings with specific classes */
+.card .card-title {
+  color: var(--accent-blue) !important;
+}
+
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
 .gradient-text {
-  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 50%, #7fb4ca 100%);
+  background: linear-gradient(
+    90deg,
+    var(--accent-blue) 0%,
+    var(--accent-purple) 50%,
+    var(--accent-cyan) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -53,35 +125,41 @@ section[data-testid="stSidebar"] .stRadio > label {
   }
 }
 
-/* Main Title */
+/* ============================================
+   TITLES
+   ============================================ */
 .main-title {
   font-size: 4rem;
   text-align: center;
   margin: 20px 0;
-  text-shadow: 0 3px 15px rgba(126, 156, 216, 0.25);
+  text-shadow: 0 3px 15px rgba(45, 79, 103, 0.15);
 }
 
 .subtitle {
   text-align: center;
-  color: #7e9cd8;
+  color: var(--accent-blue);
   font-size: 1.3rem;
   margin-bottom: 30px;
   font-weight: 500;
 }
 
-/* Soft Border */
+/* ============================================
+   BORDERS
+   ============================================ */
 .neon-border {
-  border: 2px solid #54546d;
+  border: 2px solid var(--border-primary);
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 5px 20px rgba(84, 84, 109, 0.12);
-  background: #2a2a37;
+  box-shadow: 0 5px 20px var(--shadow-color);
+  background: var(--bg-card);
 }
 
-/* Upload Box */
+/* ============================================
+   UPLOAD BOX
+   ============================================ */
 .upload-box {
-  background: linear-gradient(135deg, #2a2a37 0%, #363646 100%);
-  border: 3px dashed #727169;
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-alt) 100%);
+  border: 3px dashed var(--border-secondary);
   border-radius: 20px;
   padding: 40px;
   text-align: center;
@@ -89,14 +167,16 @@ section[data-testid="stSidebar"] .stRadio > label {
 }
 
 .upload-box:hover {
-  border-color: #7e9cd8;
-  background: linear-gradient(135deg, #363646 0%, #414155 100%);
-  box-shadow: 0 8px 25px rgba(126, 156, 216, 0.18);
+  border-color: var(--accent-blue);
+  background: linear-gradient(135deg, var(--bg-card-alt) 0%, var(--bg-card-hover) 100%);
+  box-shadow: 0 8px 25px rgba(45, 79, 103, 0.18);
 }
 
-/* Buttons - Kanagawa Gradient */
+/* ============================================
+   BUTTONS
+   ============================================ */
 .stButton > button {
-  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 100%);
+  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
   color: white;
   border: none;
   border-radius: 15px;
@@ -105,28 +185,17 @@ section[data-testid="stSidebar"] .stRadio > label {
   font-weight: 600;
   transition: all 0.3s ease;
   width: 100%;
-  box-shadow: 0 5px 20px rgba(126, 156, 216, 0.18);
+  box-shadow: 0 5px 20px rgba(45, 79, 103, 0.18);
 }
 
 .stButton > button:hover {
-  background: linear-gradient(90deg, #957fb8 0%, #7e9cd8 100%);
+  background: linear-gradient(90deg, var(--accent-purple) 0%, var(--accent-blue) 100%);
   transform: scale(1.03);
-  box-shadow: 0 7px 25px rgba(149, 127, 184, 0.25);
+  box-shadow: 0 7px 25px rgba(98, 76, 131, 0.25);
 }
 
-/* Glow on Hover */
-.glow-on-hover {
-  transition: all 0.3s ease;
-}
-
-.glow-on-hover:hover {
-  box-shadow: 0 8px 25px rgba(126, 156, 216, 0.2);
-  border-color: #7e9cd8;
-}
-
-/* Rounded Button */
 .rounded-button {
-  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 100%);
+  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
   border-radius: 25px;
   padding: 10px 25px;
   color: white;
@@ -138,10 +207,24 @@ section[data-testid="stSidebar"] .stRadio > label {
 
 .rounded-button:hover {
   transform: scale(1.08);
-  box-shadow: 0 5px 20px rgba(126, 156, 216, 0.25);
+  box-shadow: 0 5px 20px rgba(45, 79, 103, 0.25);
 }
 
-/* Status Badges - Kanagawa */
+/* ============================================
+   GLOW EFFECTS
+   ============================================ */
+.glow-on-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 8px 25px rgba(45, 79, 103, 0.2);
+  border-color: var(--accent-blue);
+}
+
+/* ============================================
+   STATUS BADGES
+   ============================================ */
 .status-badge {
   display: inline-block;
   padding: 8px 20px;
@@ -152,60 +235,75 @@ section[data-testid="stSidebar"] .stRadio > label {
 }
 
 .status-healthy {
-  background: linear-gradient(90deg, #76946a 0%, #8ba475 100%);
+  background: linear-gradient(90deg, var(--status-success) 0%, var(--status-success-light) 100%);
   color: white;
-  box-shadow: 0 5px 15px rgba(118, 148, 106, 0.2);
+  box-shadow: 0 5px 15px rgba(111, 137, 78, 0.2);
 }
 
 .status-degraded {
-  background: linear-gradient(90deg, #c98a4a 0%, #e09a5e 100%);
+  background: linear-gradient(90deg, var(--status-warning) 0%, var(--status-warning-light) 100%);
   color: white;
-  box-shadow: 0 5px 15px rgba(201, 138, 74, 0.2);
+  box-shadow: 0 5px 15px rgba(196, 163, 102, 0.2);
 }
 
 .status-offline {
-  background: linear-gradient(90deg, #c34043 0%, #d85a5d 100%);
+  background: linear-gradient(90deg, var(--status-error) 0%, var(--status-error-light) 100%);
   color: white;
-  box-shadow: 0 5px 15px rgba(195, 64, 67, 0.2);
+  box-shadow: 0 5px 15px rgba(200, 64, 83, 0.2);
 }
 
-/* Metrics */
+/* ============================================
+   METRICS
+   ============================================ */
 div[data-testid="stMetricValue"] {
   font-size: 2.5rem;
-  color: #7e9cd8;
-  text-shadow: 0 3px 10px rgba(126, 156, 216, 0.25);
+  color: var(--accent-blue);
+  text-shadow: 0 3px 10px rgba(45, 79, 103, 0.15);
 }
 
 div[data-testid="stMetricLabel"] {
-  color: #7fb4ca;
+  color: var(--accent-cyan);
   font-weight: 600;
 }
 
-/* Progress Bar */
+/* ============================================
+   PROGRESS BAR
+   ============================================ */
 .stProgress > div > div > div > div {
-  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 100%);
+  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
 }
 
-/* File Uploader */
+/* ============================================
+   FILE UPLOADER
+   ============================================ */
 .uploadedFile {
-  background: #2a2a37;
+  background: var(--bg-card);
   border-radius: 10px;
-  border: 2px solid #727169;
+  border: 2px solid var(--border-secondary);
 }
 
-/* Divider */
+/* ============================================
+   DIVIDER
+   ============================================ */
 hr {
   border: none;
   height: 3px;
-  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 50%, #7fb4ca 100%);
+  background: linear-gradient(
+    90deg,
+    var(--accent-blue) 0%,
+    var(--accent-purple) 50%,
+    var(--accent-cyan) 100%
+  );
   margin: 30px 0;
   opacity: 0.5;
 }
 
-/* Song Card */
+/* ============================================
+   SONG CARD
+   ============================================ */
 .song-card {
-  background: linear-gradient(135deg, #2a2a37 0%, #363646 100%);
-  border: 2px solid #54546d;
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-alt) 100%);
+  border: 2px solid var(--border-primary);
   border-radius: 18px;
   padding: 20px;
   margin: 10px 0;
@@ -213,28 +311,48 @@ hr {
 }
 
 .song-card:hover {
-  border-color: #727169;
-  box-shadow: 0 8px 25px rgba(114, 113, 105, 0.15);
+  border-color: var(--border-secondary);
+  box-shadow: 0 8px 25px var(--shadow-hover);
   transform: translateX(5px);
 }
 
-/* Score Badge */
+/* Override ALL text colors inside song cards */
+.song-card h1,
+.song-card h2,
+.song-card h3,
+.song-card h4,
+.song-card p,
+.song-card strong,
+.song-card span {
+  color: var(--text-primary) !important;
+}
+
+/* Song card number styling */
+.song-card .song-number {
+  color: var(--accent-blue) !important;
+}
+
+/* ============================================
+   SCORE BADGE
+   ============================================ */
 .score-badge {
-  background: linear-gradient(135deg, #7e9cd8 0%, #957fb8 100%);
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
   padding: 10px 20px;
   border-radius: 15px;
   font-size: 1.3rem;
   font-weight: bold;
   text-align: center;
   color: white;
-  box-shadow: 0 5px 20px rgba(126, 156, 216, 0.2);
+  box-shadow: 0 5px 20px rgba(45, 79, 103, 0.2);
 }
 
-/* Empty State */
+/* ============================================
+   EMPTY STATE
+   ============================================ */
 .empty-state {
   text-align: center;
   padding: 60px 20px;
-  color: #7e9cd8;
+  color: var(--accent-blue);
   font-size: 1.2rem;
 }
 
@@ -243,7 +361,17 @@ hr {
   filter: grayscale(0%);
 }
 
-/* Animation */
+.empty-state h3 {
+  color: var(--text-primary) !important;
+}
+
+.empty-state p {
+  color: var(--text-secondary) !important;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -259,17 +387,20 @@ hr {
   animation: fadeIn 0.6s ease-out;
 }
 
+/* ============================================
+   FORM CONTROLS
+   ============================================ */
 /* Slider */
 .stSlider > div > div > div > div {
-  background: #7e9cd8;
+  background: var(--accent-blue);
 }
 
 /* Radio Buttons */
 .stRadio > div {
-  background: #2a2a37;
+  background: var(--bg-card);
   border-radius: 10px;
   padding: 10px;
-  border: 1px solid #54546d;
+  border: 1px solid var(--border-primary);
 }
 
 /* Audio Player */
@@ -280,76 +411,82 @@ audio {
 
 /* Input Fields */
 .stTextInput > div > div > input {
-  background: #2a2a37;
-  border: 2px solid #54546d;
+  background: var(--bg-card);
+  border: 2px solid var(--border-primary);
   border-radius: 10px;
-  color: #dcd7ba;
+  color: var(--text-primary);
 }
 
 .stTextInput > div > div > input:focus {
-  border-color: #7e9cd8;
-  box-shadow: 0 0 15px rgba(126, 156, 216, 0.2);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 15px rgba(45, 79, 103, 0.2);
 }
 
 /* Select Box */
 .stSelectbox > div > div {
-  background: #2a2a37;
-  border: 2px solid #54546d;
+  background: var(--bg-card);
+  border: 2px solid var(--border-primary);
   border-radius: 10px;
 }
 
-/* Tabs */
+/* ============================================
+   TABS
+   ============================================ */
 .stTabs [data-baseweb="tab-list"] {
-  background: #2a2a37;
+  background: var(--bg-card);
   border-radius: 15px;
   padding: 5px;
 }
 
 .stTabs [data-baseweb="tab"] {
-  color: #c8c093;
+  color: var(--text-primary);
   border-radius: 10px;
   font-weight: 500;
 }
 
 .stTabs [aria-selected="true"] {
-  background: linear-gradient(90deg, #7e9cd8 0%, #957fb8 100%);
+  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
   color: white;
 }
 
-/* Expander */
+/* ============================================
+   EXPANDER
+   ============================================ */
 .streamlit-expanderHeader {
-  background: #2a2a37;
+  background: var(--bg-card);
   border-radius: 10px;
-  color: #dcd7ba;
+  color: var(--text-primary);
   font-weight: 600;
-  border: 1px solid #54546d;
+  border: 1px solid var(--border-primary);
 }
 
-/* Success/Error/Warning Messages */
+/* ============================================
+   ALERTS & MESSAGES
+   ============================================ */
 .stSuccess {
-  background: #2d3f2f;
-  border-left: 5px solid #76946a;
-  color: #98bb6c;
+  background: #e5dfc5;
+  border-left: 5px solid var(--status-success);
+  color: #4a6324;
   font-weight: 500;
 }
 
 .stError {
-  background: #3f2d2e;
-  border-left: 5px solid #c34043;
-  color: #e82424;
+  background: #f2e5e7;
+  border-left: 5px solid var(--status-error);
+  color: #a6333f;
   font-weight: 500;
 }
 
 .stWarning {
-  background: #3f352a;
-  border-left: 5px solid #c98a4a;
-  color: #ff9e3b;
+  background: #f2ead2;
+  border-left: 5px solid var(--status-warning);
+  color: #8a6838;
   font-weight: 500;
 }
 
 .stInfo {
-  background: #2a3546;
-  border-left: 5px solid #7e9cd8;
-  color: #7fb4ca;
+  background: #dce5e8;
+  border-left: 5px solid var(--accent-blue);
+  color: var(--accent-cyan);
   font-weight: 500;
 }
