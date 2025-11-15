@@ -25,6 +25,7 @@ dependencies = [
   "scikit-learn>=1.7.2",
   "scikit-optimize>=0.10.2",
   "seaborn>=0.13.2",
+  "streamlit>=1.51.0",
   "unidecode>=1.4.0",
   "xgboost[cuda]>=3.1.0",
 ]
