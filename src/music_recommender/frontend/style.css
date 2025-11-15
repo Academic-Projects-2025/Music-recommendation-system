@@ -1,0 +1,349 @@
+/* Hide Streamlit branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* Main App Background - Clean White */
+.stApp {
+    background: #ffffff;
+    color: #4a3a5a;
+}
+
+/* Sidebar Styling - Vibrant Pastel */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #f0e6ff 0%, #ffe6f0 100%);
+    border-right: 3px solid #b39ddb;
+}
+
+section[data-testid="stSidebar"] .stRadio > label {
+    color: #4a3a5a;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Vibrant Card */
+.card {
+    background: #fefefe;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 15px 0;
+    border: 2px solid #d4a5d4;
+    box-shadow: 0 6px 20px rgba(179, 157, 219, 0.25);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #b39ddb;
+    box-shadow: 0 8px 25px rgba(179, 157, 219, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Gradient Text - More Vibrant */
+.gradient-text {
+    background: linear-gradient(90deg, #b39ddb 0%, #64b5f6 50%, #f06292 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(15deg); }
+}
+
+/* Main Title */
+.main-title {
+    font-size: 4rem;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 0 3px 15px rgba(179, 157, 219, 0.5);
+}
+
+.subtitle {
+    text-align: center;
+    color: #5c8db8;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* Soft Border */
+.neon-border {
+    border: 2px solid #d4a5d4;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(179, 157, 219, 0.2);
+    background: #fefefe;
+}
+
+/* Upload Box */
+.upload-box {
+    background: linear-gradient(135deg, #f0e6ff 0%, #ffe6f5 100%);
+    border: 3px dashed #b39ddb;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: #f06292;
+    background: linear-gradient(135deg, #e8d4ff 0%, #ffd4e5 100%);
+    box-shadow: 0 8px 25px rgba(240, 98, 146, 0.3);
+}
+
+/* Buttons - Vibrant Gradient */
+.stButton > button {
+    background: linear-gradient(90deg, #b39ddb 0%, #f06292 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 5px 20px rgba(179, 157, 219, 0.4);
+}
+
+.stButton > button:hover {
+    background: linear-gradient(90deg, #f06292 0%, #b39ddb 100%);
+    transform: scale(1.05);
+    box-shadow: 0 7px 25px rgba(240, 98, 146, 0.5);
+}
+
+/* Glow on Hover */
+.glow-on-hover {
+    transition: all 0.3s ease;
+}
+
+.glow-on-hover:hover {
+    box-shadow: 0 8px 25px rgba(100, 181, 246, 0.4);
+    border-color: #64b5f6;
+}
+
+/* Rounded Button */
+.rounded-button {
+    background: linear-gradient(90deg, #64b5f6 0%, #b39ddb 100%);
+    border-radius: 25px;
+    padding: 10px 25px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rounded-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(100, 181, 246, 0.5);
+}
+
+/* Status Badges - Vibrant */
+.status-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 5px;
+    text-align: center;
+}
+
+.status-healthy {
+    background: linear-gradient(90deg, #81c784 0%, #66bb6a 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 187, 106, 0.4);
+}
+
+.status-degraded {
+    background: linear-gradient(90deg, #ffb74d 0%, #ffa726 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 167, 38, 0.4);
+}
+
+.status-offline {
+    background: linear-gradient(90deg, #e57373 0%, #ef5350 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(239, 83, 80, 0.4);
+}
+
+/* Metrics */
+div[data-testid="stMetricValue"] {
+    font-size: 2.5rem;
+    color: #b39ddb;
+    text-shadow: 0 3px 10px rgba(179, 157, 219, 0.3);
+}
+
+div[data-testid="stMetricLabel"] {
+    color: #5c8db8;
+    font-weight: 600;
+}
+
+/* Progress Bar */
+.stProgress > div > div > div > div {
+    background: linear-gradient(90deg, #b39ddb 0%, #64b5f6 100%);
+}
+
+/* File Uploader */
+.uploadedFile {
+    background: #f0e6ff;
+    border-radius: 10px;
+    border: 2px solid #b39ddb;
+}
+
+/* Divider */
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, #b39ddb 0%, #64b5f6 50%, #f06292 100%);
+    margin: 30px 0;
+    opacity: 0.6;
+}
+
+/* Song Card */
+.song-card {
+    background: linear-gradient(135deg, #f5f0ff 0%, #fff0f8 100%);
+    border: 2px solid #d4a5d4;
+    border-radius: 18px;
+    padding: 20px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.song-card:hover {
+    border-color: #b39ddb;
+    box-shadow: 0 8px 25px rgba(179, 157, 219, 0.3);
+    transform: translateX(5px);
+}
+
+/* Score Badge */
+.score-badge {
+    background: linear-gradient(135deg, #b39ddb 0%, #f06292 100%);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    box-shadow: 0 5px 20px rgba(179, 157, 219, 0.4);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #5c8db8;
+    font-size: 1.2rem;
+}
+
+.empty-state h1 {
+    font-size: 4rem;
+    filter: grayscale(0%);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Slider */
+.stSlider > div > div > div > div {
+    background: #b39ddb;
+}
+
+/* Radio Buttons */
+.stRadio > div {
+    background: #f0e6ff;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #d4a5d4;
+}
+
+/* Audio Player */
+audio {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Input Fields */
+.stTextInput > div > div > input {
+    background: #fefefe;
+    border: 2px solid #d4a5d4;
+    border-radius: 10px;
+    color: #4a3a5a;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #b39ddb;
+    box-shadow: 0 0 15px rgba(179, 157, 219, 0.3);
+}
+
+/* Select Box */
+.stSelectbox > div > div {
+    background: #fefefe;
+    border: 2px solid #d4a5d4;
+    border-radius: 10px;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    background: #f0e6ff;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: #6a5a7a;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(90deg, #b39ddb 0%, #f06292 100%);
+    color: white;
+}
+
+/* Expander */
+.streamlit-expanderHeader {
+    background: #f0e6ff;
+    border-radius: 10px;
+    color: #4a3a5a;
+    font-weight: 600;
+    border: 1px solid #d4a5d4;
+}
+
+/* Success/Error/Warning Messages */
+.stSuccess {
+    background: #e8f5e9;
+    border-left: 5px solid #66bb6a;
+    color: #2e7d32;
+    font-weight: 500;
+}
+
+.stError {
+    background: #ffebee;
+    border-left: 5px solid #ef5350;
+    color: #c62828;
+    font-weight: 500;
+}
+
+.stWarning {
+    background: #fff3e0;
+    border-left: 5px solid #ffa726;
+    color: #e65100;
+    font-weight: 500;
+}
+
+.stInfo {
+    background: #e3f2fd;
+    border-left: 5px solid #64b5f6;
+    color: #1565c0;
+    font-weight: 500;
+}

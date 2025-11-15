@@ -19,7 +19,7 @@ from sklearn.multioutput import MultiOutputClassifier, MultiOutputRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from src.music_recommender.utils.logger import get_logger
+from music_recommender.utils.logger import get_logger
 
 from .model_registry import MODEL_CLASS_LOOKUP, TARGET_GROUPS
 

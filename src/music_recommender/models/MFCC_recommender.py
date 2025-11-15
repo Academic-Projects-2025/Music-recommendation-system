@@ -1,14 +1,14 @@
 from pathlib import Path
 from typing import List, Optional, Dict
-from src.music_recommender.models.mfcc_hybrid import MFCCHybridModel
+from music_recommender.models.mfcc_hybrid import MFCCHybridModel
 import joblib
-from src.music_recommender.config import Config
+from music_recommender.config import Config
 import warnings
 
 import pandas as pd
 from sklearn.exceptions import ConvergenceWarning
 
-from src.music_recommender.utils.logger import get_logger
+from music_recommender.utils.logger import get_logger
 import numpy as np
 
 from sklearn.metrics.pairwise import cosine_similarity
@@ -21,7 +21,7 @@ logger = get_logger(context=__name__)
 cfg = Config()
 
 
-class MFCC_MusicRecommender:
+class MusicRecommender:
     def __init__(
         self,
         hybrid_model_path: Path,

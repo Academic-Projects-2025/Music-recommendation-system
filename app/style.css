@@ -1,0 +1,261 @@
+ /* Hide Streamlit branding */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    
+    /* Main App Background */
+    .stApp {
+        background: linear-gradient(135deg, #0b0b10 0%, #111118 50%, #0b0b10 100%);
+        color: #ffffff;
+    }
+    
+    /* Sidebar Styling */
+    section[data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #0b0b10 0%, #1a1a2e 100%);
+        border-right: 2px solid #A259FF;
+    }
+    
+    section[data-testid="stSidebar"] .stRadio > label {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    
+    /* Neon Card */
+    .card {
+        background: rgba(17, 17, 24, 0.95);
+        border-radius: 20px;
+        padding: 25px;
+        margin: 15px 0;
+        border: 2px solid rgba(162, 89, 255, 0.3);
+        box-shadow: 0 0 20px rgba(162, 89, 255, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+        border-color: #A259FF;
+        box-shadow: 0 0 30px rgba(162, 89, 255, 0.4);
+        transform: translateY(-2px);
+    }
+    
+    /* Gradient Text */
+    .gradient-text {
+        background: linear-gradient(90deg, #A259FF 0%, #00E6FF 50%, #FF6AD5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: bold;
+        animation: gradient-shift 3s ease infinite;
+    }
+    
+    @keyframes gradient-shift {
+        0%, 100% { filter: hue-rotate(0deg); }
+        50% { filter: hue-rotate(20deg); }
+    }
+    
+    /* Main Title */
+    .main-title {
+        font-size: 4rem;
+        text-align: center;
+        margin: 20px 0;
+        text-shadow: 0 0 20px rgba(162, 89, 255, 0.8);
+    }
+    
+    .subtitle {
+        text-align: center;
+        color: #00E6FF;
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        text-shadow: 0 0 10px rgba(0, 230, 255, 0.5);
+    }
+    
+    /* Neon Border */
+    .neon-border {
+        border: 2px solid #A259FF;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(162, 89, 255, 0.4),
+                    inset 0 0 15px rgba(162, 89, 255, 0.1);
+        background: rgba(162, 89, 255, 0.05);
+    }
+    
+    /* Upload Box */
+    .upload-box {
+        background: linear-gradient(135deg, rgba(162, 89, 255, 0.1) 0%, rgba(0, 230, 255, 0.1) 100%);
+        border: 3px dashed #A259FF;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .upload-box:hover {
+        border-color: #00E6FF;
+        background: linear-gradient(135deg, rgba(162, 89, 255, 0.15) 0%, rgba(0, 230, 255, 0.15) 100%);
+        box-shadow: 0 0 25px rgba(162, 89, 255, 0.3);
+    }
+    
+    /* Buttons */
+    .stButton > button {
+        background: linear-gradient(90deg, #A259FF 0%, #FF6AD5 100%);
+        color: white;
+        border: none;
+        border-radius: 15px;
+        padding: 12px 35px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        width: 100%;
+        box-shadow: 0 0 20px rgba(162, 89, 255, 0.4);
+    }
+    
+    .stButton > button:hover {
+        background: linear-gradient(90deg, #FF6AD5 0%, #A259FF 100%);
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(255, 106, 213, 0.6);
+    }
+    
+    /* Glow on Hover */
+    .glow-on-hover {
+        transition: all 0.3s ease;
+    }
+    
+    .glow-on-hover:hover {
+        box-shadow: 0 0 25px rgba(0, 230, 255, 0.6);
+        border-color: #00E6FF;
+    }
+    
+    /* Rounded Button */
+    .rounded-button {
+        background: linear-gradient(90deg, #00E6FF 0%, #A259FF 100%);
+        border-radius: 25px;
+        padding: 10px 25px;
+        color: white;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .rounded-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(0, 230, 255, 0.6);
+    }
+    
+    /* Status Badges */
+    .status-badge {
+        display: inline-block;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        margin: 5px;
+        text-align: center;
+    }
+    
+    .status-healthy {
+        background: linear-gradient(90deg, #00ff88 0%, #00cc66 100%);
+        color: #0b0b10;
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+    }
+    
+    .status-degraded {
+        background: linear-gradient(90deg, #ffaa00 0%, #ff8800 100%);
+        color: #0b0b10;
+        box-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
+    }
+    
+    .status-offline {
+        background: linear-gradient(90deg, #ff4444 0%, #cc0000 100%);
+        color: white;
+        box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+    }
+    
+    /* Metrics */
+    div[data-testid="stMetricValue"] {
+        font-size: 2.5rem;
+        color: #A259FF;
+        text-shadow: 0 0 10px rgba(162, 89, 255, 0.6);
+    }
+    
+    div[data-testid="stMetricLabel"] {
+        color: #00E6FF;
+        font-weight: 600;
+    }
+    
+    /* Progress Bar */
+    .stProgress > div > div > div > div {
+        background: linear-gradient(90deg, #A259FF 0%, #00E6FF 100%);
+    }
+    
+    /* File Uploader */
+    .uploadedFile {
+        background: rgba(162, 89, 255, 0.1);
+        border-radius: 10px;
+        border: 1px solid #A259FF;
+    }
+    
+    /* Divider */
+    hr {
+        border: none;
+        height: 2px;
+        background: linear-gradient(90deg, #A259FF 0%, #00E6FF 50%, #FF6AD5 100%);
+        margin: 30px 0;
+    }
+    
+    /* Song Card */
+    .song-card {
+        background: linear-gradient(135deg, rgba(162, 89, 255, 0.1) 0%, rgba(0, 230, 255, 0.05) 100%);
+        border: 2px solid rgba(162, 89, 255, 0.3);
+        border-radius: 18px;
+        padding: 20px;
+        margin: 10px 0;
+        transition: all 0.3s ease;
+    }
+    
+    .song-card:hover {
+        border-color: #00E6FF;
+        box-shadow: 0 0 25px rgba(0, 230, 255, 0.3);
+        transform: translateX(5px);
+    }
+    
+    /* Score Badge */
+    .score-badge {
+        background: linear-gradient(135deg, #A259FF 0%, #FF6AD5 100%);
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(162, 89, 255, 0.4);
+    }
+    
+    /* Empty State */
+    .empty-state {
+        text-align: center;
+        padding: 60px 20px;
+        color: #00E6FF;
+        font-size: 1.2rem;
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+        animation: fadeIn 0.6s ease-out;
+    }
+    
+    /* Slider */
+    .stSlider > div > div > div > div {
+        background: #A259FF;
+    }
+    
+    /* Radio Buttons */
+    .stRadio > div {
+        background: rgba(162, 89, 255, 0.1);
+        border-radius: 10px;
+        padding: 10px;
+    }
+

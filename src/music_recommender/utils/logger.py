@@ -3,7 +3,7 @@ from pathlib import Path
 
 from loguru import logger
 
-from src.music_recommender.config import Config
+from music_recommender.config import Config
 
 cfg = Config()
 
