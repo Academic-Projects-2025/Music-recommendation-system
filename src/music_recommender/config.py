@@ -1,10 +1,9 @@
 from pathlib import Path
-
+import os 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-
+PROJECT_ROOT = Path(os.getenv("PROJECT_ROOT", Path(__file__).resolve().parent.parent.parent))
 
 class PathConfig(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="PATH_")

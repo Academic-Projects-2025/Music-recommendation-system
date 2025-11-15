@@ -1,3 +1,4 @@
+import os
 import time
 from pathlib import Path
 
@@ -5,7 +6,7 @@ import requests
 import streamlit as st
 
 # API Configuration
-API_BASE = "http://localhost:8000"
+API_BASE = os.getenv("API_BASE", "http://localhost:8000")
 
 # Page Configuration
 st.set_page_config(
