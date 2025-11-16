@@ -1,7 +1,6 @@
 import os
 import warnings
 
-import joblib
 import pandas as pd
 from sklearn.exceptions import ConvergenceWarning
 from sklearn.model_selection import train_test_split
@@ -62,7 +61,7 @@ logger.info("Extracting audio features...")
 extraction_pipeline = create_extraction_pipeline(cfg)
 X_train_extracted = extraction_pipeline.fit_transform(X_train)
 X_test_extracted = extraction_pipeline.transform(X_test)
-joblib.dump(extraction_pipeline, cfg.paths.models / "extraction_mfcc_pipeline.joblib")
+# joblib.dump(extraction_pipeline, cfg.paths.models / "extraction_mfcc_pipeline.joblib")
 logger.success(
     f"The extraction pipline is saved in {cfg.paths.models / 'extraction_mfcc_pipeline.joblib'}"
 )
@@ -130,12 +129,11 @@ for group_name, score_info in scores.items():
         f"{group_name:15} | {score_info['metric']:8} = {score_info['score']:.4f} | Targets: {score_info['targets']}"
     )
 
-joblib.dump(hybrid_model, cfg.paths.models / "mfcc_hybrid_model.joblib")
+# joblib.dump(hybrid_model, cfg.paths.models / "mfcc_hybrid_model.joblib")
 logger.success(f"Model saved to {cfg.paths.models / 'mfcc_hybrid_model.joblib'}")
 import os
 import warnings
 
-import joblib
 import pandas as pd
 from sklearn.exceptions import ConvergenceWarning
 from sklearn.model_selection import train_test_split
@@ -196,7 +194,7 @@ logger.info("Extracting audio features...")
 extraction_pipeline = create_extraction_pipeline(cfg)
 X_train_extracted = extraction_pipeline.fit_transform(X_train)
 X_test_extracted = extraction_pipeline.transform(X_test)
-joblib.dump(extraction_pipeline, cfg.paths.models / "extraction_pipeline.joblib")
+# joblib.dump(extraction_pipeline, cfg.paths.models / "extraction_pipeline.joblib")
 logger.success(
     f"The extraction pipline is saved in {cfg.paths.models / 'extraction_pipeline.joblib'}"
 )
@@ -264,5 +262,5 @@ for group_name, score_info in scores.items():
         f"{group_name:15} | {score_info['metric']:8} = {score_info['score']:.4f} | Targets: {score_info['targets']}"
     )
 
-joblib.dump(hybrid_model, cfg.paths.models / "hybrid_model.joblib")
+# joblib.dump(hybrid_model, cfg.paths.models / "hybrid_model.joblib")
 logger.success(f"Model saved to {cfg.paths.models / 'hybrid_model.joblib'}")

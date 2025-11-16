@@ -1,0 +1,28 @@
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
+
+WORKDIR /app
+
+ENV UV_COMPILE_BYTECODE=1
+ENV UV_LINK_MODE=copy
+
+COPY pyproject.toml uv.lock ./
+
+# Install dependencies (without the project)
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --locked --no-install-project --no-dev
+
+COPY src/music_recommender/frontend/ ./src/music_recommender/frontend/
+COPY src/music_recommender/config.py ./src/music_recommender/
+COPY src/music_recommender/__init__.py ./src/music_recommender/
+
+# Install the project
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --locked --no-dev
+
+# Expose Streamlit port
+EXPOSE 8501
+
+CMD ["uv", "run", "streamlit", "run", "src/music_recommender/frontend/app.py", \
+     "--server.address", "0.0.0.0", \
+     "--server.port", "8501", \
+     "--server.headless", "true"]

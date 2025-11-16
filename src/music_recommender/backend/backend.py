@@ -12,6 +12,7 @@ from pydantic import BaseModel
 
 from src.music_recommender.config import Config
 from src.music_recommender.models.recommender import MusicRecommender
+from src.music_recommender.scripts.training_stats import training_script
 from src.music_recommender.utils.logger import get_logger
 
 logger = get_logger(context="api")
@@ -37,6 +38,23 @@ def startup_event():
         logger.info("Loading models...")
 
         extraction_pipeline_path = cfg.paths.models / "extraction_pipeline.joblib"
+        hybrid_model_path = cfg.paths.models / "hybrid_model.joblib"
+        spotify_dataset_path = (
+            cfg.paths.data / "raw/spotify-12m-songs/tracks_features.csv"
+        )
+
+        if not (extraction_pipeline_path.exists() and hybrid_model_path.exists()):
+            logger.info("Missing required models, training now...")
+            training_script()
+            logger.info("Training complete")
+
+        logger.info(f"Looking Extraction pipeline for at: {extraction_pipeline_path}")
+        logger.info(f"Looking for hybrid model at: {hybrid_model_path}")
+        logger.info(f"Looking for dataset at: {spotify_dataset_path}")
+        logger.info(f"Hybrid model exists: {hybrid_model_path.exists()}")
+        logger.info(f"Dataset exists: {spotify_dataset_path.exists()}")
+        logger.info(f"Extraction pipeline exists: {extraction_pipeline_path.exists()}")
+
         if extraction_pipeline_path.exists():
             extraction_pipeline = joblib.load(extraction_pipeline_path)
             logger.info("Extraction pipeline loaded successfully")
@@ -44,16 +62,6 @@ def startup_event():
             logger.warning(
                 f"Extraction pipeline not found at {extraction_pipeline_path}"
             )
-
-        hybrid_model_path = cfg.paths.models / "hybrid_model.joblib"
-        spotify_dataset_path = (
-            cfg.paths.data / "raw/spotify-12m-songs/tracks_features.csv"
-        )
-
-        logger.info(f"Looking for hybrid model at: {hybrid_model_path}")
-        logger.info(f"Looking for dataset at: {spotify_dataset_path}")
-        logger.info(f"Hybrid model exists: {hybrid_model_path.exists()}")
-        logger.info(f"Dataset exists: {spotify_dataset_path.exists()}")
 
         if hybrid_model_path.exists() and spotify_dataset_path.exists():
             recommender = MusicRecommender(

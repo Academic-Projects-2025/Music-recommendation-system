@@ -7,7 +7,7 @@ from sklearn.exceptions import ConvergenceWarning
 from sklearn.model_selection import train_test_split
 
 from src.music_recommender.config import Config
-from src.music_recommender.data.pipeline import create_extraction_pipeline
+from src.music_recommender.data.pipeline import create_MFCC_extraction_pipeline
 from src.music_recommender.evaluation.evaluator import get_best_models, get_top_3_models
 from src.music_recommender.models.mfcc_hybrid import MFCCHybridModel
 from src.music_recommender.models.model_registry import (
@@ -59,7 +59,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 logger.info(f"Train: {len(X_train)} samples, Test: {len(X_test)} samples")
 
 logger.info("Extracting audio features...")
-extraction_pipeline = create_extraction_pipeline(cfg)
+extraction_pipeline = create_MFCC_extraction_pipeline(cfg)
 X_train_extracted = extraction_pipeline.fit_transform(X_train)
 X_test_extracted = extraction_pipeline.transform(X_test)
 joblib.dump(extraction_pipeline, cfg.paths.models / "extraction_mfcc_pipeline.joblib")

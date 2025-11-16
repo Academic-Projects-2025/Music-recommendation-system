@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # Backend service - FastAPI
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: music-recommender-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models      # Read-write for auto-training
+      - ./data:/app/data          # Read-write for downloads
+      - ./logs:/app/logs
+    environment:
+      - PROJECT_ROOT=/app
+      - GITHUB_RELEASE_URL=${GITHUB_RELEASE_URL:-https://github.com/Academic-Projects-2025/Music-recommendation-system/releases/download/1.0/precessed_data.zip}
+    networks:
+      - music-net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 1200s
+
+  # Frontend service - Streamlit
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: music-recommender-frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE=http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - music-net
+    restart: unless-stopped
+
+networks:
+  music-net:
+    driver: bridge
+
+volumes:
+  models:
+  data:
+  logs:

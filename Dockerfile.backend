@@ -1,0 +1,39 @@
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libsndfile1 \
+    ffmpeg \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Enable bytecode compilation
+ENV UV_COMPILE_BYTECODE=1
+ENV UV_LINK_MODE=copy
+
+COPY pyproject.toml uv.lock ./
+
+# Install dependencies (without the project)
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --locked --no-install-project --no-dev
+
+# Copy source code
+COPY src/ ./src/
+COPY data/processed ./data/processed/
+COPY data/interim ./data/interim/
+COPY models/*.csv ./models/
+
+# Install the project
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --locked --no-dev
+
+RUN mkdir -p data/raw data/processed models logs
+
+COPY docker/backend-entrypoint.sh /backend-entrypoint.sh
+RUN chmod +x /backend-entrypoint.sh
+
+EXPOSE 8000
+
+ENTRYPOINT ["/backend-entrypoint.sh"]
