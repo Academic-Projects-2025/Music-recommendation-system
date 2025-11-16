@@ -78,8 +78,8 @@ graph TD
 
     I1 --> J[Ranked Recommendations]
 
-    style A fill:#e1f5ff
-    style J fill:#d4edda
+    style A fill:#4a90e2,stroke:#2c5aa0,stroke-width:3px,color:#fff
+    style J fill:#27ae60,stroke:#1e8449,stroke-width:3px,color:#fff
 
 ```
 
