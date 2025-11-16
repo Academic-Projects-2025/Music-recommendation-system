@@ -17,7 +17,7 @@ Traditional music recommendation systems rely heavily on collaborative filtering
 
 ## Demo
 
-<video src="./reports/video/demo.mp4" controls width="800"></video>
+![Demo](./reports/video/demo.gif)
 
 ## Key Features
 
@@ -94,6 +94,7 @@ graph TD
     style J fill:#27ae60,stroke:#1e8449,stroke-width:3px,color:#fff
 
 ```
+
 ## Technical Implementation
 
 ### Feature Extraction Details
