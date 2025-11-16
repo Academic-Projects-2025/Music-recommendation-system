@@ -602,6 +602,8 @@ The system is designed to work with the Spotify Million Song Dataset, which cont
 - Metadata: track names, artists, albums
 - Source: [Spotify Dataset](https://www.kaggle.com/datasets/rodolfofigueroa/spotify-12m-songs)
 
+And the [Fma dataset](https://github.com/mdeff/fma)
+
 ## Performance Optimization
 
 ### Caching Strategy
