@@ -15,6 +15,10 @@ Traditional music recommendation systems rely heavily on collaborative filtering
 - Capturing nuanced acoustic similarities that may not be reflected in user behavior patterns
 - Offering interpretable predictions of musical attributes that explain recommendation decisions
 
+## Demo
+
+<video src="./reports/video/demo.mp4" controls width="800"></video>
+
 ## Key Features
 
 ### Audio Processing Pipeline
