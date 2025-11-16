@@ -658,6 +658,6 @@ If you use this system in your research, please cite:
   author = {Your Name},
   title = {Content-Based Music Recommendation System via Audio Signal Processing},
   year = {2024},
-  url = {https://github.com/yourusername/music-recommender}
+  url = {https://github.com/Academic-Projects-2025/Music-recommendation-system.git}
 }
 ```
