@@ -642,7 +642,7 @@ If you use this system in your research, please cite:
 
 ```bibtex
 @software{music_recommender_2024,
-  author = {Your Name},
+  author = {El Yalaoui Mouaad, Rime AABIL},
   title = {Content-Based Music Recommendation System via Audio Signal Processing},
   year = {2025},
   url = {https://github.com/Academic-Projects-2025/Music-recommendation-system.git}
