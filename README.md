@@ -52,7 +52,7 @@ Traditional music recommendation systems rely heavily on collaborative filtering
 ## System Architecture
 
 ### Pipeline Components
-mermaid 
+
 ```
 graph TD
     A[Raw Audio Input] --> B[Audio Loader]
