@@ -657,7 +657,7 @@ If you use this system in your research, please cite:
 @software{music_recommender_2024,
   author = {Your Name},
   title = {Content-Based Music Recommendation System via Audio Signal Processing},
-  year = {2024},
+  year = {2025},
   url = {https://github.com/Academic-Projects-2025/Music-recommendation-system.git}
 }
 ```
