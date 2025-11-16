@@ -52,38 +52,36 @@ Traditional music recommendation systems rely heavily on collaborative filtering
 ## System Architecture
 
 ### Pipeline Components
-
-```mermaid
+mermaid 
+```
 graph TD
     A[Raw Audio Input] --> B[Audio Loader]
-    B --> B1[\"• Format detection<br/>• Librosa loading (sr=22050 Hz)<br/>• Mono conversion\"]
+    B --> B1["• Format detection<br/>• Librosa loading (sr=22050 Hz)<br/>• Mono conversion"]
     B1 --> C[Spectrogram Extractor]
-    C --> C1[\"• STFT computation (n_fft=2048, hop_length=512)<br/>• Mel spectrogram (n_mels=40)<br/>• 30-second normalization\"]
+    C --> C1["• STFT computation (n_fft=2048, hop_length=512)<br/>• Mel spectrogram (n_mels=40)<br/>• 30-second normalization"]
     C1 --> D[Feature Extractor]
 
     D --> E[MFCC Pipeline]
-    E --> E1[\"• 13 MFCCs + Δ + ΔΔ<br/>• Statistical aggregation<br/>(mean, std, min, max, median, Q25, Q75)<br/>• Output: 273 features<br/>• PCA reduction → 80 components\"]
+    E --> E1["• 13 MFCCs + Δ + ΔΔ<br/>• Statistical aggregation<br/>(mean, std, min, max, median, Q25, Q75)<br/>• Output: 273 features<br/>• PCA reduction → 80 components"]
 
     D --> F[Statistical Pipeline]
-    F --> F1[\"• Spectral features (centroid, bandwidth, rolloff, flatness, flux)<br/>• Temporal features (RMS, ZCR, attack time, centroid)<br/>• Rhythm features (tempo, beat strength, onset rate)<br/>• Chroma features (12 pitch classes)<br/>• Harmonic features (f0, tristimulus, inharmonicity)<br/>• HPSS separation<br/>• Output: 200+ features<br/>• PCA reduction → 75 components\"]
+    F --> F1["• Spectral features (centroid, bandwidth, rolloff, flatness, flux)<br/>• Temporal features (RMS, ZCR, attack time, centroid)<br/>• Rhythm features (tempo, beat strength, onset rate)<br/>• Chroma features (12 pitch classes)<br/>• Harmonic features (f0, tristimulus, inharmonicity)<br/>• HPSS separation<br/>• Output: 200+ features<br/>• PCA reduction → 75 components"]
 
     E1 --> G[Hybrid Model]
     F1 --> G
-    G --> G1[\"• Additional PCA reduction (50 components)<br/>• Stacking ensemble per task group<br/>• Final estimators: Ridge (regression), Logistic Regression (classification)\"]
+    G --> G1["• Additional PCA reduction (50 components)<br/>• Stacking ensemble per task group<br/>• Final estimators: Ridge (regression), Logistic Regression (classification)"]
 
     G1 --> H[Predicted Features]
-    H --> H1[\"• 8 continuous attributes<br/>• 3 categorical attributes\"]
+    H --> H1["• 8 continuous attributes<br/>• 3 categorical attributes"]
 
     H1 --> I[Similarity Matching]
-    I --> I1[\"• Feature standardization<br/>• One-hot encoding of categorical features<br/>• Cosine similarity computation\"]
+    I --> I1["• Feature standardization<br/>• One-hot encoding of categorical features<br/>• Cosine similarity computation"]
 
     I1 --> J[Ranked Recommendations]
 
     style A fill:#4a90e2,stroke:#2c5aa0,stroke-width:3px,color:#fff
     style J fill:#27ae60,stroke:#1e8449,stroke-width:3px,color:#fff
-
 ```
-
 ## Technical Implementation
 
 ### Feature Extraction Details
