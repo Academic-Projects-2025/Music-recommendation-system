@@ -53,7 +53,7 @@ Traditional music recommendation systems rely heavily on collaborative filtering
 
 ### Pipeline Components
 
-```
+```mermaid
 graph TD
     A[Raw Audio Input] --> B[Audio Loader]
     B --> B1["• Format detection<br/>• Librosa loading (sr=22050 Hz)<br/>• Mono conversion"]
